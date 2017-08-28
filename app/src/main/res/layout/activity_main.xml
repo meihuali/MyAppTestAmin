@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    tools:context="com.example.administrator.myapptestamin.MainActivity">
+    <Button
+        android:id="@+id/btn_start"
+        android:text="跳转"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content" />
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Hello World!dwqdeqwdf我的费威风威Hello World!dwqdeqwdf我的费威风威风 非非无法额废物废物费威风威风风飞舞Hello World!dwqdeqwdf我的费威风威风 非非无法额废物废物费威风威风风飞舞Hello World!dwqdeqwdf我的费威风威风 非非无法额废物废物费威风威风风飞舞Hello World!dwqdeqwdf我的费威风威风 非非无法额废物废物费威风威风风飞舞Hello World!dwqdeqwdf我的费威风威风 非非无法额废物废物费威风威风风飞舞Hello World!dwqdeqwdf我的费威风威风 非非无法额废物废物费威风威风风飞舞Hello World!dwqdeqwdf我的费威风威风 非非无法额废物废物费威风威风风飞舞Hello World!dwqdeqwdf我的费威风威风 非非无法额废物废物费威风威风风飞舞Hello World!dwqdeqwdf我的费威风威风 非非无法额废物废物费威风威风风飞舞Hello World!dwqdeqwdf我的费威风威风 非非无法额废物废物费威风威风风飞舞Hello World!dwqdeqwdf我的费威风威风 非非无法额废物废物费威风威风风飞舞Hello World!dwqdeqwdf我的费威风威风 非非无法额废物废物费威风威风风飞舞Hello World!dwqdeqwdf我的费威风威风 非非无法额废物废物费威风威风风飞舞Hello World!dwqdeqwdf我的费威风威风 非非无法额废物废物费威风威风风飞舞Hello World!dwqdeqwdf我的费威风威风 非非无法额废物废物费威风威风风飞舞Hello World!dwqdeqwdf我的费威风威风 非非无法额废物废物费威风威风风飞舞Hello World!dwqdeqwdf我的费威风威风 非非无法额废物废物费威风威风风飞舞Hello World!dwqdeqwdf我的费威风威风 非非无法额废物废物费威风威风风飞舞Hello World!dwqdeqwdf我的费威风威风 非非无法额废物废物费威风威风风飞舞Hello World!dwqdeqwdf我的费威风威风 非非无法额废物废物费威风威风风飞舞风 非非无法额废物废物费威风威风风飞舞"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintRight_toRightOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+</LinearLayout>
