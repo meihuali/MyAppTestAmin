@@ -26,17 +26,29 @@ public class TestActivity extends AppCompatActivity implements View.OnClickListe
     protected void onCreate(@Nullable Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_test);
+        initView();
+        iniAniM();
+    }
+
+    private void initView() {
         //根布局的 ID
         ll_layout = findViewById(R.id.ll_layout);
-        //程序进来的时候时候的 动画·
-        AnimUtils.animhpel((Activity) this,ll_layout);
-
+        //按钮的ID
         btn_start = (Button)findViewById(R.id.btn_start);
         btn_start.setOnClickListener(this);
-
+    }
+    /*
+    *  动画
+    * */
+    private void iniAniM() {
+        //程序进来的时候时候的 动画·
+        AnimUtils.animhpel((Activity) this,ll_layout);
     }
 
 
+    /*
+    * 这里是点击 button 按钮返回的动画·
+    * */
     @Override
     public void onClick(View view) {
         switch (view.getId()) {
