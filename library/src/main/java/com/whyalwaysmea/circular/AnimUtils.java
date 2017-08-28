@@ -26,7 +26,7 @@ public class AnimUtils {
 
 
     public static void animhpel(final Activity activity, View view) {
-         activity1 = activity;
+        activity1 = activity;
         view1 = view;
         view.post(new Runnable() {
             @Override
@@ -84,14 +84,28 @@ public class AnimUtils {
         }
     };
 
-    public static void finshAnim(boolean status,int x,int y) {
 
+
+    /*
+    * 该方法是点击某个按钮 finish 的时候掉用
+    * */
+    public static void finshAnim(boolean status,int x,int y) {
         if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.LOLLIPOP) {
             Animator animator = createRevealAnimator(true, x, y);
             animator.start();
         } else {
             activity1.finish();
         }
-
+    }
+    /*
+    * 该方法是按返回键的时候掉用
+    * */
+    public static void finishonBackPressed() {
+        if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.LOLLIPOP) {
+            Animator animator = createRevealAnimator(true, mX, mY);
+            animator.start();
+        } else {
+           activity1.finish();
+        }
     }
 }
