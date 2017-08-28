@@ -10,7 +10,7 @@ import android.widget.Button;
 import com.whyalwaysmea.circular.AnimUtils;
 
 public class MainActivity extends AppCompatActivity implements View.OnClickListener {
-   Button btn_start;
+    Button btn_start;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -29,7 +29,8 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
         switch (view.getId()) {
             case R.id.btn_start:
                 //点击跳转
-                AnimUtils.startIntent(view, (Activity) MainActivity.this,TestActivity.class);
+                Intent intent = new Intent(MainActivity.this,TestActivity.class);
+                AnimUtils.startIntent(intent,view, (Activity) MainActivity.this);
                 break;
         }
     }

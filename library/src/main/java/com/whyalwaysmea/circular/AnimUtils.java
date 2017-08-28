@@ -112,8 +112,7 @@ public class AnimUtils {
     /*
     * A界面点击跳转的时候调用·该方法
     * */
-    public static void startIntent(View view,Activity activity,Class classs) {
-        Intent i = new Intent( activity, classs);
+    public static void startIntent(Intent i,View view,Activity activity) {
         i.putExtra("x", (int)view.getX());
         i.putExtra("y", (int)view.getY());
         activity.startActivity(i);
