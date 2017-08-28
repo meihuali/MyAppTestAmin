@@ -21,8 +21,11 @@ Activity 界面跳转 动画 过渡效果轻飘带水波纹的形式 非常给�
    
    
                 Intent i = new Intent(MainActivity.this, TestActivity.class);
+		
                 i.putExtra("x", (int)view.getX());
+		
                 i.putExtra("y", (int)view.getY());
+		
                 startActivity(i);
                 
 
