@@ -34,4 +34,13 @@ Activity 界面跳转 动画 过渡效果轻飘带水波纹的形式 非常给�
 
     private View  ll_layout = findViewById(R.id.ll_layout);
     
+    然后当然就是我们的核心代码了，初始化完毕 B 这个activity的跟布局以后  那么接着在这个acitivit oncreate
+    里面就写上核心代码 
     
+         AnimUtils.animhpel((Activity) this,ll_layout);
+	 
+	 然后点击某个 按钮 返回到上一个acitivity的话核心代码就是 
+	 
+	  AnimUtils.finshAnim(true,(int)view.getX(),(int)view.getY());
+	  
+	  
