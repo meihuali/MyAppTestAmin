@@ -2,6 +2,7 @@ package com.whyalwaysmea.circular;
 
 import android.animation.Animator;
 import android.app.Activity;
+import android.content.Intent;
 import android.os.Build;
 import android.view.View;
 import android.view.ViewAnimationUtils;
@@ -107,5 +108,14 @@ public class AnimUtils {
         } else {
            activity1.finish();
         }
+    }
+    /*
+    * A界面点击跳转的时候调用·该方法
+    * */
+    public static void startIntent(View view,Activity activity,Class classs) {
+        Intent i = new Intent( activity, classs);
+        i.putExtra("x", (int)view.getX());
+        i.putExtra("y", (int)view.getY());
+        activity.startActivity(i);
     }
 }

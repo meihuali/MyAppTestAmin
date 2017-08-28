@@ -1,10 +1,13 @@
 package com.example.administrator.myapptestamin;
 
+import android.app.Activity;
 import android.content.Intent;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
+
+import com.whyalwaysmea.circular.AnimUtils;
 
 public class MainActivity extends AppCompatActivity implements View.OnClickListener {
    Button btn_start;
@@ -25,11 +28,11 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
     public void onClick(View view) {
         switch (view.getId()) {
             case R.id.btn_start:
-                Intent i = new Intent(MainActivity.this, TestActivity.class);
-                i.putExtra("x", (int)view.getX());
-                i.putExtra("y", (int)view.getY());
-                startActivity(i);
+                //点击跳转
+                AnimUtils.startIntent(view, (Activity) MainActivity.this,TestActivity.class);
                 break;
         }
     }
+
+
 }
