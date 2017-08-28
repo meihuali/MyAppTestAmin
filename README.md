@@ -8,8 +8,8 @@ Activity 界面跳转 动画 过渡效果轻飘带水波纹的形式 非常给�
    
    然后
    添加依赖
-   compile 'com.github.meihuali:MyAppTestAmin:V1.1.0'
-   
+   compile 'com.github.meihuali:MyAppTestAmin:V1.1.3'
+   
    
    然后当然就是 苦逼的程序员代码了·不过我们要的就是 简单便捷·太鸡吧多的代码
    谁看了多会烦·
@@ -18,45 +18,44 @@ Activity 界面跳转 动画 过渡效果轻飘带水波纹的形式 非常给�
   
   首先当然是 你点击 某个按钮 要跳转的时候 
    那么这里 就 直接copy 这句话
-   
-   
-                Intent i = new Intent(MainActivity.this, TestActivity.class);
-		
-                i.putExtra("x", (int)view.getX());
-		
-                i.putExtra("y", (int)view.getY());
-		
-                startActivity(i);
-                
+   
+                   //启动过场动画 注意这里是A activity
+                    AnimUtils.startIntent(intent,view,MainActivity.this);
+                
 
-然后如果你要跳转到的那个 Activity  那么B 这个activity 的话·首先在 oncreate 的时候 直接初始化 
+然后如果你要跳转到的哪个 Activity  那么B 这个activity 的话·首先在 oncreate 的时候 直接初始化 
 根布局的 ID  那么类型 定位 view 型 例如 
+注意根布局的话也就是你这个id所在的布局 必须要加入 
 
+    android:background="@color/white"
+    
     private View  ll_layout = findViewById(R.id.ll_layout);
+    
+    然后当然就是我们的核心代码了，初始化完毕B这个activity的跟布局以后
     
-    然后当然就是我们的核心代码了，初始化完毕 B 这个activity的跟布局以后  那么接着在这个acitivit oncreate
-    里面就写上核心代码 
-    
-         AnimUtils.animhpel((Activity) this,ll_layout);
+    那么接着在这个该界面的 oncreate方法中掉下面的这句话
+   
+    
+         AnimUtils.animhpel((Activity) this,ll_layout);
 	 
 	 然后点击某个 按钮 返回到上一个acitivity的话核心代码就是 
 	 
 	  AnimUtils.finshAnim(true,(int)view.getX(),(int)view.getY());
-	  
+	  
 	 如果你觉得这个动画还不爽 那么你点击 返回键只需要调用 
 	 
 	   AnimUtils.finishonBackPressed(); 
-	   
+	   
 	   这句话就可以了·
-	   
+	   
 	   千万记住·在 被跳转到的activity 的（这里指A跳转到 B 也就是指的B 这个activity）
-	   
-	   清单配置的时候要加入 
-	   
-	   <activity android:name=".TestActivity"
-	   
+	   
+	   清单配置的时候要加入 
+	   
+	   <activity android:name=".TestActivity"
+	   
             android:theme="@style/noAnimTheme" （必须要加入这句话）
            
-	  
+	  
 	  />
 	 
