@@ -43,4 +43,20 @@ Activity 界面跳转 动画 过渡效果轻飘带水波纹的形式 非常给�
 	 
 	  AnimUtils.finshAnim(true,(int)view.getX(),(int)view.getY());
 	  
+	 如果你觉得这个动画还不爽 那么你点击 返回键只需要调用 
+	 
+	   AnimUtils.finishonBackPressed(); 
+	   
+	   这句话就可以了·
+	   
+	   千万记住·在 被跳转到的activity 的（这里指A跳转到 B 也就是指的B 这个activity）
+	   
+	   清单配置的时候要加入 
+	   
+	   <activity android:name=".TestActivity"
+	   
+            android:theme="@style/noAnimTheme" （必须要加入这句话）
+           
 	  
+	  />
+	 
