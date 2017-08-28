@@ -18,7 +18,9 @@ Activity 界面跳转 动画 过渡效果轻飘带水波纹的形式 非常给�
   
   首先当然是 你点击 某个按钮 要跳转的时候 
    那么这里 就 直接copy 这句话
+   
    
+   
                    //启动过场动画 注意这里是A activity
                     AnimUtils.startIntent(intent,view,MainActivity.this);
                 
