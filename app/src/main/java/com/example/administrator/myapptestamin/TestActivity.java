@@ -6,6 +6,8 @@ import android.support.annotation.Nullable;
 import android.support.v7.app.AppCompatActivity;
 import android.view.View;
 import android.widget.Button;
+import android.widget.ImageView;
+import android.widget.RelativeLayout;
 
 import com.whyalwaysmea.circular.AnimUtils;
 
@@ -21,7 +23,8 @@ public class TestActivity extends AppCompatActivity implements View.OnClickListe
 
     private View ll_layout;
     private Button btn_start;
-
+    private ImageView image_kehu;
+    private RelativeLayout ll_xxxx;
     @Override
     protected void onCreate(@Nullable Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -31,6 +34,9 @@ public class TestActivity extends AppCompatActivity implements View.OnClickListe
     }
 
     private void initView() {
+        ll_xxxx = findViewById(R.id.ll_xxxx);
+        image_kehu = findViewById(R.id.image_kehu);
+        image_kehu.setOnClickListener(this);
         //根布局的 ID
         ll_layout = findViewById(R.id.ll_layout);
         //按钮的ID
@@ -54,6 +60,19 @@ public class TestActivity extends AppCompatActivity implements View.OnClickListe
         switch (view.getId()) {
             case R.id.btn_start:
                 AnimUtils.finshAnim(true,(int)view.getX(),(int)view.getY());
+                break;
+
+            case R.id.image_kehu:
+
+/*                int fy = (int) ll_xxxx.getY();
+                int zy = (int) view.getY();
+                int y  = fy+zy;
+
+                AnimUtils.finshAnim(true,(int)view.getX(),y);*/
+
+
+                    //这里第2个参数传递父布局的 ID 第三个参数传递当前被点击的view
+                   AnimUtils.finishAmins((Activity) TestActivity.this,R.id.ll_xxxx,view);
                 break;
         }
     }
