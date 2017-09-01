@@ -8,7 +8,8 @@ Activity 界面跳转 动画 过渡效果轻飘带水波纹的形式 非常给�
    
    然后
    添加依赖
-   compile 'com.github.meihuali:MyAppTestAmin:V1.1.3'
+    compile 'com.github.meihuali:MyAppTestAmin:V1.1.4'
+    
    
    
    然后当然就是 苦逼的程序员代码了·不过我们要的就是 简单便捷·太鸡吧多的代码
@@ -40,7 +41,9 @@ Activity 界面跳转 动画 过渡效果轻飘带水波纹的形式 非常给�
 	 
 	 然后点击某个 按钮 返回到上一个acitivity的话核心代码就是 
 	 
-	  AnimUtils.finshAnim(true,(int)view.getX(),(int)view.getY());
+	       //这里第2个参数传递父布局的 ID 第三个参数传递当前被点击的view
+	       
+                   AnimUtils.finishAmins((Activity) TestActivity.this,R.id.ll_xxxx,view);
 	  
 	 如果你觉得这个动画还不爽 那么你点击 返回键只需要调用 
 	 
