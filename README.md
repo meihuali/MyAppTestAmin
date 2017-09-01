@@ -8,7 +8,7 @@ Activity 界面跳转 动画 过渡效果轻飘带水波纹的形式 非常给�
    
    然后
    添加依赖
-    compile 'com.github.meihuali:MyAppTestAmin:V1.1.4'
+    compile 'com.github.meihuali:MyAppTestAmin:V1.1.5'
     
    
    
