@@ -47,9 +47,8 @@ Activity 界面跳转 动画 过渡效果轻飘带水波纹的形式 非常给�
     然后当然就是我们的核心代码了，初始化完毕B这个activity的跟布局以后
     
     那么接着在这个该界面的 oncreate方法中掉下面的这句话
-   
-    
-         AnimUtils.animhpel((Activity) this,ll_layout);
+    
+    AnimUtils.animhpel((Activity) this,ll_layout);
 	 
 	 然后点击某个 按钮 返回到上一个acitivity的话核心代码就是 
 	 
