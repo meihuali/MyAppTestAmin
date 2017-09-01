@@ -22,14 +22,14 @@ import android.widget.RelativeLayout;
  * 描述：TODO
  */
 public class AnimUtils {
-    private  static SparseArray<View> views = new SparseArray();
     public static int mX;
     private static int mY;
     private static View view1;
     private static Activity activity1;
 
 
-    public static void animhpel(final Activity activity, View view) {
+    public static void animhpel(final Activity activity, int layoutID) {
+        View view = activity.findViewById(layoutID);
         activity1 = activity;
         view1 = view;
         view.post(new Runnable() {
@@ -56,10 +56,8 @@ public class AnimUtils {
 
         Animator animator = null;
         if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.LOLLIPOP) {
-            animator = ViewAnimationUtils.createCircularReveal(
-                    view1, x, y,
-                    startRadius,
-                    endRadius);
+            Log.e("way","line 60 activity null====activityName:"+activity1.getLocalClassName());
+            animator = ViewAnimationUtils.createCircularReveal(view1, x, y, startRadius, endRadius);
         }
         animator.setDuration(800);
         animator.setInterpolator(new AccelerateDecelerateInterpolator());
@@ -94,10 +92,14 @@ public class AnimUtils {
     *  例如A在B 里面 那边B 在C 里面·那么这里传递的第2个参数就是 B 这个控件的ID
     *  第3个参数的传递的就是 你点击的那个按钮 所对应的那个 onclick 事件的那个view点getID 的那个view
     * */
-    public static void finishAmins(Activity activity,int fukongjianID,View zikongjianID) {
+    public static void finishAmins(Activity activity,int fukongjianID,View zikongjianID,int currentID) {
+        activity1 = activity;
+
         boolean statuss = true;
         //父控件初始化
          View view = activity.findViewById(fukongjianID);
+        View current_ID =  activity.findViewById(currentID);
+        view1 = current_ID;
         int xw  = (int) view.getX();
         int xy  = (int) view.getY();
 
@@ -111,13 +113,10 @@ public class AnimUtils {
         //调用动画
         finshAnim(statuss,x,y);
     }
-
-
-
     /*
     * 该方法是点击某个按钮 finish 的时候掉用
     * */
-    public static void finshAnim(boolean status,int x,int y) {
+    public static void finshAnim( boolean status,int x,int y) {
 
         if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.LOLLIPOP) {
             Animator animator = createRevealAnimator(true, x, y);

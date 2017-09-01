@@ -15,7 +15,7 @@
         android:visibility="gone"
         android:id="@+id/btn_start"
         android:text="返回"
-       android:layout_gravity="bottom|right"
+        android:layout_gravity="bottom|right"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content" />
     <RelativeLayout
@@ -35,7 +35,11 @@
             android:src="@drawable/image"
             android:layout_width="30dp"
             android:layout_height="30dp" />
-
+        <Button
+            android:id="@+id/btn_san"
+            android:text="点击跳转到第3个界面"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content" />
     </RelativeLayout>
 
 </LinearLayout>

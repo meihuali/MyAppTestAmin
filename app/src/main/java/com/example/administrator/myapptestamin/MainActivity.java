@@ -32,7 +32,6 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
             case R.id.btn_start:
                 //点击跳转
                 Intent intent = new Intent(MainActivity.this,TestActivity.class);
-
                 AnimUtils.startIntent(intent,view, (Activity) MainActivity.this,R.id.ll_layoutss);
                 break;
         }

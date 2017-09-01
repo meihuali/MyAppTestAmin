@@ -28,6 +28,7 @@
         </activity>
         <activity android:name=".CircularButtonActivity">
         </activity>
+
     </application>
 
 </manifest>

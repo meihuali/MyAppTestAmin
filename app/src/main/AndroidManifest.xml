@@ -20,6 +20,10 @@
         <activity android:name=".TestActivity"
             android:theme="@style/noAnimTheme"
             />
+
+        <activity android:name=".Disangejiemian"
+
+            />
     </application>
 
 </manifest>
