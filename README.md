@@ -35,44 +35,62 @@ Activity 界面跳转 动画 过渡效果轻飘带水波纹的形式 非常给�
   Intent intent = new Intent(MainActivity.this,TestActivity.class);
        
   AnimUtils.startIntent(intent,view, (Activity) MainActivity.this,R.id.ll_layoutss);
-   
+  
+  /************************第二步骤***************************************************************/
+  
+  
+  然后就是目标activity 在oncreate的时候掉用下面这句话 
+  
+   AnimUtils.animhpel((Activity) this,R.id.ll_layout);
+  
+  第一个参数为 当前activity对象
+  
+  第二个参数为 当前对象布局中的根布局，注意这里是最外成 最外层的那个布局
+  
+  /**************************第三步******************************************************************/
+  
+  如果按某个按钮返回界面可以调用下面这句 
+  
+  第一个参数为 当前类的对象
+  
+  第二个参数为 当前被点击按钮外层的那个布局·注意这里不是最外层的布局哦
+  
+  第三个参数为 当前点击按钮的view 也就是那个onclick 按钮的view
+  
+  第四个参数为 最外层的跟布局的ID 最外层记住 最外层
+  
+  AnimUtils.finishAmins((Activity) TestActivity.this,R.id.ll_xxxx,view,R.id.ll_layout);
+  
+ /******************************第三步骤**************************************************************/
+ 
+  如果按返回键 可以调用下面代码
   
-                
-
-然后如果你要跳转到的哪个 Activity  那么B 这个activity 的话·首先在 oncreate 的时候 直接初始化 
-根布局的 ID  那么类型 定位 view 型 例如 
-注意根布局的话也就是你这个id所在的布局 必须要加入 
-
-    android:background="@color/white"
+  第一个参数为 当前类的对象
+  
+  第二个参数为 当前最外层的那个布局的ID 
+     @Override
+    public void onBackPressed() {
     
-    private View  ll_layout = findViewById(R.id.ll_layout);
+       AnimUtils.finishonBackPressed(SettingsYusanActivity.this,R.id.ll_layoutss);
+       
+    }
+  
+  /********************************第四步骤************************************************************/
+  
+  目标activity背景可以加成白色
+ 
+  android:background="@color/white"
+  
+  
+  /********************************第五步骤********************************************************************/
+  
     
-    然后当然就是我们的核心代码了，初始化完毕B这个activity的跟布局以后
-    
-    那么接着在这个该界面的 oncreate方法中掉下面的这句话
-    
-    AnimUtils.animhpel((Activity) this,ll_layout);
-	 
-	 然后点击某个 按钮 返回到上一个acitivity的话核心代码就是 
-	 
-	       //这里第2个参数传递父布局的 ID 第三个参数传递当前被点击的view
-	       
-                   AnimUtils.finishAmins((Activity) TestActivity.this,R.id.ll_xxxx,view);
-	  
-	 如果你觉得这个动画还不爽 那么你点击 返回键只需要调用 
-	 
-	   AnimUtils.finishonBackPressed(); 
-	   
-	   这句话就可以了·
-	   
-	   千万记住·在 被跳转到的activity 的（这里指A跳转到 B 也就是指的B 这个activity）
-	   
-	   清单配置的时候要加入 
-	   
+  然后在目标activity 的清单配置中加入 这句话
+  
+  
 	   <activity android:name=".TestActivity"
 	   
             android:theme="@style/noAnimTheme" （必须要加入这句话）
-           
 	  
 	  />
 	 
