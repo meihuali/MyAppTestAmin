@@ -131,7 +131,10 @@ public class AnimUtils {
     /*
     * 该方法是按返回键的时候掉用
     * */
-    public static void finishonBackPressed() {
+    public static void finishonBackPressed(Activity activity,int layoutID) {
+        activity1 = activity;
+        View view = activity.findViewById(layoutID);
+        view1 = view;
         if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.LOLLIPOP) {
             Animator animator = createRevealAnimator(true, mX, mY);
             animator.start();

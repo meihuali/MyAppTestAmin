@@ -81,6 +81,6 @@ public class TestActivity extends AppCompatActivity implements View.OnClickListe
     * */
     @Override
     public void onBackPressed() {
-        AnimUtils.finishonBackPressed();
+        AnimUtils.finishonBackPressed((Activity) TestActivity.this,R.id.ll_layout);
     }
 }

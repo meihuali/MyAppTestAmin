@@ -24,13 +24,12 @@ public class Disangejiemian extends AppCompatActivity {
         setContentView(R.layout.activity_disangge);
 
         //程序进来的时候时候的 动画·
-        ll_layout = findViewById(R.id.ll_layout);
         AnimUtils.animhpel((Activity) this,R.id.ll_layout);
 
     }
 
     @Override
     public void onBackPressed() {
-        AnimUtils.finishonBackPressed();
+        AnimUtils.finishonBackPressed((Activity) Disangejiemian.this,R.id.ll_layout);
     }
 }
