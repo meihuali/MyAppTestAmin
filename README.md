@@ -8,7 +8,7 @@ Activity 界面跳转 动画 过渡效果轻飘带水波纹的形式 非常给�
    
    然后
    添加依赖
-    compile 'com.github.meihuali:MyAppTestAmin:V1.1.4'
+    compile 'com.github.meihuali:MyAppTestAmin:V1.1.5'
     
    
    
@@ -18,10 +18,22 @@ Activity 界面跳转 动画 过渡效果轻飘带水波纹的形式 非常给�
    酷炫的 界面跳转效果
   
   首先当然是 你点击 某个按钮 要跳转的时候 
+  
   那么这里 就 直接copy 这句话
+  
   //启动过场动画 注意这里是A activity
   
-  AnimUtils.startIntent(intent,view,MainActivity.this);
+  
+   Intent intentkehu = new Intent(getApplicationContext(), KeHuFanKuiActivity.class);
+   
+   第一个参数为 inttext对象 
+   
+   第二个参数为被点击的按钮例如button 的那个onclick的view
+   
+   第三个参数为当前对象
+   
+   第四个参数为 当前被点击控件的的外城的那个布局例如A在B里面那这个ID就是B的 ID
+ AnimUtils.startIntent(intentkehu,view,MainActivity.this,R.id.ll_xxxx);
                 
 
 然后如果你要跳转到的哪个 Activity  那么B 这个activity 的话·首先在 oncreate 的时候 直接初始化 
@@ -35,9 +47,8 @@ Activity 界面跳转 动画 过渡效果轻飘带水波纹的形式 非常给�
     然后当然就是我们的核心代码了，初始化完毕B这个activity的跟布局以后
     
     那么接着在这个该界面的 oncreate方法中掉下面的这句话
-   
-    
-         AnimUtils.animhpel((Activity) this,ll_layout);
+    
+    AnimUtils.animhpel((Activity) this,ll_layout);
 	 
 	 然后点击某个 按钮 返回到上一个acitivity的话核心代码就是 
 	 
