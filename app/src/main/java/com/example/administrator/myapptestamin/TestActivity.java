@@ -34,7 +34,7 @@ public class TestActivity extends AppCompatActivity implements View.OnClickListe
     }
 
     private void initView() {
-        ll_xxxx = findViewById(R.id.ll_xxxx);
+       // ll_xxxx = findViewById(R.id.ll_xxxx);
         image_kehu = findViewById(R.id.image_kehu);
         image_kehu.setOnClickListener(this);
         //根布局的 ID
@@ -63,14 +63,10 @@ public class TestActivity extends AppCompatActivity implements View.OnClickListe
                 break;
 
             case R.id.image_kehu:
-
 /*                int fy = (int) ll_xxxx.getY();
                 int zy = (int) view.getY();
                 int y  = fy+zy;
-
                 AnimUtils.finshAnim(true,(int)view.getX(),y);*/
-
-
                     //这里第2个参数传递父布局的 ID 第三个参数传递当前被点击的view
                    AnimUtils.finishAmins((Activity) TestActivity.this,R.id.ll_xxxx,view);
                 break;

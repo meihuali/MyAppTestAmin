@@ -7,11 +7,19 @@
     android:layout_height="match_parent"
     android:orientation="vertical"
     tools:context="com.example.administrator.myapptestamin.MainActivity">
-    <Button
-        android:id="@+id/btn_start"
-        android:text="跳转"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content" />
+
+    <LinearLayout
+        android:id="@+id/ll_layoutss"
+        android:gravity="right"
+        android:layout_width="match_parent"
+        android:layout_height="80dp">
+        <Button
+            android:id="@+id/btn_start"
+            android:text="跳转"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content" />
+
+    </LinearLayout>
     <TextView
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"

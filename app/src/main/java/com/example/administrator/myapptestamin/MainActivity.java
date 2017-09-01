@@ -6,11 +6,13 @@ import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
+import android.widget.LinearLayout;
 
 import com.whyalwaysmea.circular.AnimUtils;
 
 public class MainActivity extends AppCompatActivity implements View.OnClickListener {
     Button btn_start;
+    private LinearLayout ll_layoutss;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -30,7 +32,8 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
             case R.id.btn_start:
                 //点击跳转
                 Intent intent = new Intent(MainActivity.this,TestActivity.class);
-                AnimUtils.startIntent(intent,view, (Activity) MainActivity.this);
+
+                AnimUtils.startIntent(intent,view, (Activity) MainActivity.this,R.id.ll_layoutss);
                 break;
         }
     }

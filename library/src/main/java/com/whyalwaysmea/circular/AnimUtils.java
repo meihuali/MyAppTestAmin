@@ -98,10 +98,8 @@ public class AnimUtils {
         boolean statuss = true;
         //父控件初始化
          View view = activity.findViewById(fukongjianID);
-
         int xw  = (int) view.getX();
         int xy  = (int) view.getY();
-
 
         //获取子控件的Y轴
         zikongjianID.getWidth();
@@ -145,9 +143,17 @@ public class AnimUtils {
     /*
     * A界面点击跳转的时候调用·该方法
     * */
-    public static void startIntent(Intent i,View view,Activity activity) {
-        i.putExtra("x", (int)view.getX());
-        i.putExtra("y", (int)view.getY());
+    public static void startIntent(Intent i,View view,Activity activity,int fukongjianID) {
+        //父控件初始化
+        View viewS = activity.findViewById(fukongjianID);
+
+        int xw  = (int) viewS.getX();
+        int xy  = (int) viewS.getY();
+
+        int y = xy + (int)view.getY();
+        int x = xw + (int)view.getX();
+        i.putExtra("x", x);
+        i.putExtra("y", y);
         activity.startActivity(i);
     }
 }
